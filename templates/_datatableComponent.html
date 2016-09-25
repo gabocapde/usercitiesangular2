@@ -1,0 +1,28 @@
+<div class="col-md-offset-3 col-md-3">
+	From:
+</div>
+<div class="col-md-3">
+	To:
+</div>
+<div class="col-md-offset-3 col-md-3 filter-input">
+	<input type="date" class="form-control" *ngIf=enableFilter [(ngModel)]=queryStart (keyup)=filter() placeholder="Filter" />
+</div>
+<div class="col-md-3 filter-input">
+	<input type="date" class="form-control" *ngIf=enableFilter [(ngModel)]=queryEnd (keyup)=filter() placeholder="Filter" />
+</div>
+<table class="table bordered">
+	<thead>
+		<tr>
+			<th *ngFor="let column of columns" (click)="changeOrder(column)">
+				{{column.header}}
+				<span *ngIf="orderVar == column.value && orderAsc == true">&#8675;</span>
+				<span *ngIf="orderVar == column.value && orderAsc == false">&#8673;</span>
+			</th>
+		</tr>
+	</thead>
+	<tbody *ngFor="let row of getData() | sort: orderVar: orderAsc">
+		<tr>
+			<td *ngFor="let column of columns">{{row[column.value]}}</td>
+		</tr>
+	</tbody>
+</table>

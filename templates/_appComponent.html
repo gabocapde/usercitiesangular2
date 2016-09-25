@@ -1,0 +1,24 @@
+<div class="col-sm-12 col-md-12 col-lg-12 ">
+	<h1 class="title_principal">User Management System</h1>
+</div>
+
+<div class="col-sm-12 col-md-12 col-lg-12 ">
+	<user-form></user-form>
+</div>
+
+<div class="col-sm-12 col-md-12 col-lg-12 ">
+	<h1 class="title_principal">Cities Management System</h1>
+</div>
+
+<div class="col-sm-12 col-md-12 col-lg-12 ">
+	<div class="table-container noPaddingLeft">
+		<datatable [dataset]=cities [enableFilter]=true >
+			  <column [value]="'city'" [header]="'City'"></column>
+			  <column [value]="'start_date'" [header]="'Start Date'"></column>
+			  <column [value]="'end_date'" [header]="'End Date'"></column>
+			  <column [value]="'price'" [header]="'Price'"></column>
+			  <column [value]="'status'" [header]="'Status'"></column>
+			  <column [value]="'color'" [header]="'Color'"></column>
+		 </datatable>		
+	</div>	
+</div>		
